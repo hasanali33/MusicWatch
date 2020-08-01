@@ -2,8 +2,10 @@ package com.example.stopwatchworks;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -53,6 +55,16 @@ public class MainActivity extends AppCompatActivity {
         button.setTypeface(MMedium);
         welcomeSubText.setTypeface(MLight);
         welcomeText.setTypeface(MMedium);
+
+        // onClickListener is used to make it listen to the click
+        // onClick is used to execute actions after the user clicks the button
+        // using View.OnClickListener because dont have to import
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Menu.class));
+            }
+        });
 
 
     }
